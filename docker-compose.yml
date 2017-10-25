@@ -1,0 +1,15 @@
+version: "3"
+services:
+  spotlight:
+    image: dbpedia/spotlight-english
+    ports:
+      - 9002:80
+  opener:
+    image: semlab/dadalytics-opener
+    ports:
+      - 9001:9001
+  stanford:
+    image: semlab/dadalytics-stanford-ner
+    ports:
+      - 9000:9000
+      
