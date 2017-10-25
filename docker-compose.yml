@@ -2,6 +2,7 @@ version: "3"
 services:
   spotlight:
     image: dbpedia/spotlight-english
+    entrypoint: spotlight.sh
     ports:
       - 9002:80
   opener:
