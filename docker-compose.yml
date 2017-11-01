@@ -4,7 +4,7 @@ services:
     image: dbpedia/spotlight-english
     entrypoint: spotlight.sh
     ports:
-      - 80:80
+      - 9002:80
   opener:
     image: semlab/dadalytics-opener
     ports:
