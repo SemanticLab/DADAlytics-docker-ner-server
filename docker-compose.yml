@@ -4,7 +4,7 @@ services:
     image: dbpedia/spotlight-english
     entrypoint: spotlight.sh
     ports:
-      - 9002:80
+      - 80:80
   opener:
     image: semlab/dadalytics-opener
     ports:
@@ -13,4 +13,12 @@ services:
     image: semlab/dadalytics-stanford-ner
     ports:
       - 9000:9000
+  server:
+    image: semlab/dadalytics-docker-ner-gateway
+    ports:
+      - 80:80
+    links:
+      - spotlight
+      - opener
+      - stanford
       
