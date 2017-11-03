@@ -13,10 +13,19 @@ services:
     image: semlab/dadalytics-stanford-ner
     ports:
       - 9000:9000
-  server:
+  gateway:
     image: semlab/dadalytics-docker-ner-gateway
     ports:
-      - 80:80
+      - 80:8080
+      - 443:8443
+      - 5001:8001
+    volumes:
+      - "/etc/certs:/etc/certs"
+    environment:
+      - SSL_PROD=true
+      - SSL_ENABLED=true
+      - SSL_DOMAINS=
+      - SSL_EMAIL=
     links:
       - spotlight
       - opener
