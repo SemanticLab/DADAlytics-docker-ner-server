@@ -24,8 +24,8 @@ services:
     environment:
       - SSL_PROD=true
       - SSL_ENABLED=true
-      - SSL_DOMAINS=
-      - SSL_EMAIL=
+      - SSL_DOMAINS=ner.semlab.io
+      - SSL_EMAIL=thisismattmiller@gmail.com
     links:
       - spotlight
       - opener
