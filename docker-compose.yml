@@ -1,5 +1,17 @@
 version: "3"
 services:
+  spacy:
+    image: jgontrum/spacyapi:en_v2
+    ports:
+      - 9005:80
+  parsey:
+    image: andersrye/parsey-universal-server
+    ports:
+      - 9004:80
+  nltk:
+    image: semlab/dadalytics-nltk
+    ports:
+      - 9003:9003
   spotlight:
     image: dbpedia/spotlight-english
     entrypoint: spotlight.sh
@@ -24,10 +36,13 @@ services:
     environment:
       - SSL_PROD=true
       - SSL_ENABLED=true
-      - SSL_DOMAINS=ner.semlab.io
+      - SSL_DOMAINS=nerserver.semlab.io
       - SSL_EMAIL=thisismattmiller@gmail.com
     links:
       - spotlight
       - opener
       - stanford
+      - nltk
+      - spacy
+      - parsey
       
