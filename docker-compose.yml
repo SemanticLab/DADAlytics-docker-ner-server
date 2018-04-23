@@ -6,6 +6,8 @@ services:
       - 9005:80
   parsey:
     image: andersrye/parsey-universal-server
+    environment:
+      - PYTHONIOENCODING=utf8
     ports:
       - 9004:80
   nltk:
