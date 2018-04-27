@@ -40,6 +40,8 @@ services:
       - SSL_ENABLED=true
       - SSL_DOMAINS=nerserver.semlab.io
       - SSL_EMAIL=thisismattmiller@gmail.com
+      - NER_TIMEOUT=15000
+      - PYTHONIOENCODING=utf8
     links:
       - spotlight
       - opener
