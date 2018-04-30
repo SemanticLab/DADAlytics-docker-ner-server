@@ -5,7 +5,7 @@ services:
     ports:
       - 9005:80
   parsey:
-    image: andersrye/parsey-universal-server
+    image: jesdoit/parsey-server
     environment:
       - PYTHONIOENCODING=utf8
     ports:
@@ -40,7 +40,7 @@ services:
       - SSL_ENABLED=true
       - SSL_DOMAINS=nerserver.semlab.io
       - SSL_EMAIL=thisismattmiller@gmail.com
-      - NER_TIMEOUT=15000
+      - NER_TIMEOUT=25000
       - PYTHONIOENCODING=utf8
     links:
       - spotlight
