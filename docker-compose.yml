@@ -40,6 +40,7 @@ services:
       - SSL_ENABLED=false
       - SSL_DOMAINS=example.exampledomain.org
       - SSL_EMAIL=example@example.com
+      - SSL_REDIRECT=false
       - NER_TIMEOUT=25000
       - PYTHONIOENCODING=utf8
     links:
